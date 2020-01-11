@@ -4,19 +4,19 @@
 # https://github.com/jlesage/docker-baseimage
 #
 
-ARG BASEIMAGE=unknown
+ENV BASEIMAGE
 
 # Pull base image.
 FROM ${BASEIMAGE}
 
 # Define s6 overlay related variables.
-ARG S6_OVERLAY_ARCH=x86_64
+ARG S6_OVERLAY_ARCH=aarch64
 ARG S6_OVERLAY_VERSION=1.21.4.0
 ARG S6_OVERLAY_URL=https://github.com/just-containers/s6-overlay/releases/download/v${S6_OVERLAY_VERSION}/s6-overlay-${S6_OVERLAY_ARCH}.tar.gz
 
 # Define GLIBC related variables.
 ARG GLIBC_INSTALL=0
-ARG GLIBC_ARCH=x86_64
+ARG GLIBC_ARCH=aarch64
 ARG GLIBC_VERSION=2.26-r1
 ARG GLIBC_URL=https://github.com/jlesage/glibc-bin-multiarch/releases/download/${GLIBC_VERSION}/glibc-bin-${GLIBC_VERSION}-${GLIBC_ARCH}.tar.gz
 ARG GLIBC_LOCALE_INPUT=en_US
