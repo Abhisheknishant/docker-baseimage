@@ -7,7 +7,7 @@ services:
   - 'docker'
 
 arch:
-  - 'aarch64'
+  - 'arm64'
 
 # prepare the machine before any code
 # installation scripts 
